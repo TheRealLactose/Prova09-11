@@ -1,23 +1,42 @@
-import React from "react";
+import * as React from "react";
 import "./index.css";
+import Menu from "../../component/menu/index"
+import Table from "../../component/table/index"
+import TextField  from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import axios from "axios";
+import {useForm} from "react-hook-form"
 
-function formulario (){
+function Formulario (){
 
+    const {register, handleSubmit} = useForm()
+    
+     const addPost = data => axios.post("http://localhost:8080/create", data)
+    .then(() => {
+        alert("Deu Certo")
+    })
+    .catch(()=>{
+        alert("Error")
+    })
     return(
         <div className="formulario">
-            <form method="post">
+            <form onSubmit={handleSubmit(addPost)}>
                 <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome"  className="nome" />
+                    <Menu/>
                 </div>
                 <div>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" className="email" />
+                <TextField id="standard-basic" label="nome" name="name" {...register("name")} variant="standard" />
                 </div>
                 <div>
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(xx) xxxxx-xxxx"/>
+                <TextField id="standard-basic" label="email" name="email" {...register("email")} variant="standard" />
                 </div>
+                <div>
+                    <TextField id="standard-basic" label="telefone" name="telephone" {...register("telephone")} variant="standard" />
+                </div>
+                <div className="botao" >
+                <Button variant="contained" type ="Submit"> Salvar </Button>
+                </div>
+                
             </form>
         </div>
     )
@@ -25,5 +44,5 @@ function formulario (){
     
 }
 
-export default formulario
+export default Formulario
 

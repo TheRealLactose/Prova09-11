@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Formulario from './pages/formulario/index'
+import Routes from './routes';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Formulario />
+    <Routes/>
   </React.StrictMode>,
   document.getElementById('root')
 );

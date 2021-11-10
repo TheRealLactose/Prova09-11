@@ -4,11 +4,16 @@
     height: 100vh;
     padding: 0;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     background-position: 30% 45%;
-    background-color: black;
+    background-color: white;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+
+.botao{
+    margin-top: 50px;
 }

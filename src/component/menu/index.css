@@ -1,0 +1,21 @@
+li{
+    font-weight: bold;
+    list-style: none;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.Lista{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 8vh;
+    background: blue;
+}
