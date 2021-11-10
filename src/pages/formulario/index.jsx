@@ -16,7 +16,7 @@ function Formulario (){
         alert("Enviado")
     })
     .catch(()=>{
-        alert("Error")
+        alert("Email invalido ou já existente!")
     })
 
     return(
@@ -26,16 +26,16 @@ function Formulario (){
                     <Menu/>
                 </div>
                 <div>
-                <TextField id="standard-basic" label="nome" name="name" {...register("name")} variant="standard" />
+                    <TextField id="standard-basic" label="nome" name="name" {...register("name")} variant="standard" />
                 </div>
                 <div>
-                <TextField id="standard-basic" label="email" name="email" {...register("email")} variant="standard" />
+                    <TextField id="standard-basic" label="email" name="email" {...register("email")} variant="standard" />
                 </div>
                 <div>
                     <TextField id="standard-basic" label="telefone" name="telephone" {...register("telephone")} variant="standard" />
                 </div>
                 <div className="botao" >
-                <Button variant="contained" type ="Submit"> Salvar </Button>
+                    <Button variant="contained" type ="Submit"> Salvar </Button>
                 </div>
                 
             </form>

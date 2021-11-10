@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import axios from 'axios'
-
+import { Link} from "react-router-dom"
 
 const TableUser = () => {
 
@@ -24,6 +24,11 @@ const TableUser = () => {
       })
   },[])
 
+  function deletePost(id){
+      axios.delete(`http://localhost:8080/user/${id}`)
+
+      setUsers(users.filter(user => user.id !==id))
+  }
 
   return (
     <div>
@@ -41,7 +46,7 @@ const TableUser = () => {
         <TableBody>
           {users.map((user) => (
             <TableRow
-              key={user.name}
+              key={user.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
@@ -49,8 +54,8 @@ const TableUser = () => {
               </TableCell>
               <TableCell align="right">{user.email}</TableCell>
               <TableCell align="right">{user.telephone}</TableCell>
-              <TableCell align="right"><Button variant="contained">Editar</Button></TableCell>
-              <TableCell align="right"><Button variant="outlined" color="error">Deletar</Button></TableCell>
+              <TableCell align="right"><Link to={{pathname:`/edit/${user.id}`}}><Button variant="contained">Editar</Button></Link></TableCell>
+              <TableCell align="right"><Button variant="outlined" color="error" onClick={() => deletePost(user.id)}>Deletar</Button></TableCell>
             </TableRow>
           ))}
         </TableBody>
