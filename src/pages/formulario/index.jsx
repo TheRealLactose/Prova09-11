@@ -1,23 +1,24 @@
 import * as React from "react";
 import "./index.css";
 import Menu from "../../component/menu/index"
-import Table from "../../component/table/index"
 import TextField  from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from "axios";
 import {useForm} from "react-hook-form"
 
+
 function Formulario (){
 
     const {register, handleSubmit} = useForm()
     
-     const addPost = data => axios.post("http://localhost:8080/create", data)
+     const addPost = data => axios.post("http://localhost:8080/user", data)
     .then(() => {
-        alert("Deu Certo")
+        alert("Enviado")
     })
     .catch(()=>{
         alert("Error")
     })
+
     return(
         <div className="formulario">
             <form onSubmit={handleSubmit(addPost)}>
