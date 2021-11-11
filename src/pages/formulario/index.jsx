@@ -16,7 +16,7 @@ function Formulario (){
         alert("Enviado")
     })
     .catch(()=>{
-        alert("Email invalido ou já existente!")
+        alert("Email ou Telefone ja existente!")
     })
 
     return(
