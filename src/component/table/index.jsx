@@ -30,8 +30,14 @@ const TableUser = () => {
       setUsers(users.filter(user => user.id !==id))
   }
 
+  const [buscar, setBuscar] = useState('')
+
   return (
     <div>
+      <input type="text" placeholder="buscar..."
+        onChange={(event) => {setBuscar(event.target.value);
+        }}
+      />
           <TableContainer>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
@@ -44,7 +50,13 @@ const TableUser = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {users.map((user) => (
+          {users.filter((user)=>{
+            if(buscar == ""){
+              return user
+            }else if(user.name.toLowerCase().includes(buscar.toLowerCase())){
+              return user
+            }
+           }).map((user) => (
             <TableRow
               key={user.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
