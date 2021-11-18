@@ -38,10 +38,10 @@ function Editar () {
                     <TextField id="standard-basic" label="nome" name="name" InputLabelProps={{ shrink: true }} {...register("name")} variant="standard" />
                 </div>
                 <div>
-                    <TextField id="standard-basic " disabled defaultValue="Disabled" label="email" name="email" InputLabelProps={{ shrink: true }} {...register("email")} variant="standard" />
+                    <TextField id="standard-basic "  label="email" name="email" InputLabelProps={{ shrink: true }} {...register("email")} variant="standard" />
                 </div>
                 <div>
-                    <TextField id="standard-basic" disabled defaultValue="Disabled" label="telefone" name="telephone" InputLabelProps={{ shrink: true }} {...register("telephone")} variant="standard" />
+                    <TextField id="standard-basic"  label="telefone" name="telephone" InputLabelProps={{ shrink: true }} {...register("telephone")} variant="standard" />
                 </div>
                 <div className="botao" >
                     <Button variant="contained" type ="Submit"> Salvar </Button>
